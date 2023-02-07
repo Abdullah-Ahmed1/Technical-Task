@@ -7,7 +7,7 @@ var bookSchema = new mongoose.Schema({
     type:String,
   },
   no_of_pages: {
-    type: String,
+    type: Number,
   },
   published_at:{
     type:Date

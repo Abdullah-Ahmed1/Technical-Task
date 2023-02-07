@@ -4,15 +4,29 @@ require("../connection/connection");
 
 module.exports = {
     create:(req,res)=>{
-        res.send("reached")
+        console.log("reached")
+        Book.create(req.body)
+        .then(()=>{
+            res.send("book created")
+        })
+        .catch(err=>{
+            console.log("error")
+        })
     }
 ,
     showBooks:(req,res)=>{
-        console.log("show books")
+        Book.find({})
+        .then((book)=>{
+            res.send(book)
+        })
     },
 
     deleteBook:(req,res)=>{
-        console.log("delete book")
+        const id = req.params.id
+        Book.deleteOne({_id:id})
+        .then(()=>{
+            res.send("deleted successfully")
+        })
     }
 ,
     updateBook:(rea,res)=>{
