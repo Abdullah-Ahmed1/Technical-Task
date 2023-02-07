@@ -22,8 +22,10 @@ function App() {
 
   return (
     <div className="App">
-     
-      <h1>Vite + React</h1>
+      <Routes>
+        <Route path='/add'  element={<Comp1/>} />
+        <Route path='/show'  element={<Comp2/>} />
+      </Routes>
 
      </div>
 
