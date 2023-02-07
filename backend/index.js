@@ -1,8 +1,13 @@
-const express = require('express')
-const app = express()
-app.use(express.json())
+ const express= require("express")
+ const app = express()
 
+// app.get('/hello',(req,res)=>{
+//     res.send("this route is reached")
+// })
 
-app.listen(5000,()=>{
-    console.log("your port is running on port 5000")
-})
+const mainRouter = require("./routes/main")
+app.use('/book',mainRouter)
+
+ app.listen(5000,()=>{
+    console.log("your app is running on port 5000")
+ })
