@@ -30,6 +30,18 @@ module.exports = {
     }
 ,
     updateBook:(rea,res)=>{
-        console.log("update book")
+        const data = req.body
+        Book.findOneAndUpdate(
+            { _id :id },
+            {
+                title: data.title,
+                author: data.author,
+                no_of_pages:data.no_of_pages,
+                pubished_at : data.pubished_at
+            }
+            )
+            .then(()=>{
+                res.send("updated suuccessfully")
+            })
     }
 }
