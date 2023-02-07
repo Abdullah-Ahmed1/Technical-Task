@@ -10,7 +10,7 @@ module.exports = {
             res.send("book created")
         })
         .catch(err=>{
-            console.log("error")
+            console.log(err)
         })
     }
 ,
@@ -29,7 +29,8 @@ module.exports = {
         })
     }
 ,
-    updateBook:(rea,res)=>{
+    updateBook:(req,res)=>{
+        const id= req.params.id 
         const data = req.body
         Book.findOneAndUpdate(
             { _id :id },
