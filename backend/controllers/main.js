@@ -1,3 +1,6 @@
+const mongoose = require("mongoose");
+require("../connection/connection");
+ const Book = mongoose.model("Book");
 
 module.exports = {
     create:(req,res)=>{

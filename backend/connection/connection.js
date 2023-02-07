@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 mongoose.connect(
-  "mongodb://localhost:27017/IBlogs",
+  "mongodb://127.0.0.1:27017/IBlogs",
   { useNewUrlParser: true },
   (err) => {
     if (!err) {
@@ -11,3 +12,4 @@ mongoose.connect(
   }
 );
 module.exports = mongoose.connect;
+require("../models/book.model");
